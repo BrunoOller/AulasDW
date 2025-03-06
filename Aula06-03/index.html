@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- CSS Interno -> TAG style no HEAD -->
+    <style>
+        /* Existem 3 formas de aplicar o CSS em elementos:
+        TAG -> utilizando o nome da TAG. Ex: b{...}
+        .classe -> criamos uma classe para reaproveitar
+            o mesmo CSS em vários locais. Ex: .azul{...}
+        #id -> definimos um id para o element. aplica somente
+            a ele, só podendo gaver 1 id com aquele nome.
+            Ex: #logo{...}
+        */
+
+        b {
+            font-weight: normal;
+            color: #f00; /* Cor simplificada: #ff0000 */
+            font-size: 18pt;
+            font-style: italic;
+        }
+
+        .texto-verde {
+            color: #0f0 !important;
+        }
+
+        .texto-amarelo {
+            color: #ff0;
+        }
+
+        .fundo-vermelho {
+            background-color: #f00;
+        }
+        
+        .fundo-azul {
+            background-color: #00f;
+        }
+
+        .fundo-degrade {
+            background: linear-gradient(180deg, #fff, #f00, #470303, #000);
+        }
+    </style>
+</head>
+
+<body style="background-color: #f3f3f3;">
+    <div style="width: 100%; height: auto; display: flex; flex-direction: column; justify-content: center; align-items: center;"
+        class="textos">
+        <h1 style="font-weight: 700; font-size: 20pt; color: #000000;">Aula Sobre CSS
+        </h1>
+        <b>Lorem ipsum dolor sit amet consectetur adipisicing elit.</b>
+        <!-- CSS Inline -> Direto no elemento HTML -->
+        <p style="font-weight: 500; font-size: 17pt; color: #272727; text-align: justify; width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit natus perspiciatis possimus nam magnam dolorum velit assumenda officiis. Qui cumque esse autem repudiandae a perspiciatis harum praesentium iusto ipsam nisi!
+        </p>
+        <p>Texto que era para ser negrito: <b>Olá CSS!</b></p>
+        <b>Também sou negrito!</b> <br>
+
+        <!-- Para utilizar classes utilizamos a propriedade class -->
+        <p class="texto-amarelo fundo-vermelho">Eu mudei usando classes!</p>
+        <p class="texto-verde fundo-vermelho">Trocando novamente as cores</p>
+        <p>No meio do texto <i class="texto-verde">Também pode</i></p>
+        <p class="texto-amarelo fundo-azul">Opa mais um texto aqui</p>
+    </div>
+
+    <div style="width: 100%; height: auto; display: flex; justify-content: center;
+    align-items: center; gap: 15px; padding: 15px 0; " class="blocos">
+        <div style="width: 100px; height: 100px; background-color: #fff; border-radius: 7px; box-shadow: 0 0 5px #000000c2;"
+            class="bloco1"></div>
+            <div style="width: 100px; height: 100px; background-color: #f00; border-radius: 7px; box-shadow: 0 0 5px #000000c2;"
+                class="bloco3"></div>
+        <div style="width: 100px; height: 100px; background-color: #470303; border-radius: 7px; box-shadow: 0 0 5px #000000c2;"
+            class="bloco2"></div>
+        <div style="width: 100px; height: 100px; background-color: #000; border-radius: 7px; box-shadow: 0 0 5px #000000c2;"
+            class="bloco4"></div>
+            <p>=</p>
+        <div style="width: 100px; height: 100px; background: linear-gradient(90deg, #fff, #f00, #470303, #000); border-radius: 7px; box-shadow: 0 0 5px #000000c2;"
+            class="bloco5"></div>
+    </div>
+</body>
+
+</html>
