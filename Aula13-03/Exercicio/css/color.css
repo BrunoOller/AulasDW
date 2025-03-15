@@ -1,0 +1,44 @@
+/* Variáveis das cores do site */
+:root {
+    /* -- Tema Claro -- */
+    /* Página */
+    --bg-color: #f1f1f1;
+    --bg-color-02: #a2a2a2;
+    --text-color: #000;
+
+    /* Header */
+    --bg-header: linear-gradient(45deg, #e0e0e0d3, #c0c0c0d3, #d6d6d6d3, #d8d8d8d3, #e0e0e0d3);
+    --bx-shadow: #1414148c;
+    --a-00: #2a2a2a;
+    --a-01: #1a1a1a;
+    --btn-color: #f1f1f1;
+    --btn-bg-00: #f96800;
+    --btn-bg-01: #f99500;
+
+    /* Cards */
+    --card-bg: #e0e0e0d3;
+    --bx-shadow-card: #bebebe;
+    --p-color: #1a1a1a;
+
+    /* -- Tema Escuro -- */
+    body.dark-mode {
+        /* Página */
+        --bg-color: #1a1a1a;
+        --bg-color-02: #2a2a2a;
+        --text-color: #f3f3f3;
+
+        /* Header */
+        --bg-header: linear-gradient(45deg, #252525d3, #2c2c2cd3, #1f1f1fd3, #2e2e2eaf, #222222d3);
+        --bx-shadow: #ebebeb8c;
+        --a-00: #e4e4e4;
+        --a-01: #ffffff;
+        --btn-color: #f1f1f1;
+        --btn-bg-00: #f96800;
+        --btn-bg-01: #f99500;
+
+        /* Cards */
+        --card-bg: #2c2c2cd3;
+        --bx-shadow-card: #161616;
+        --p-color: #adadad;
+    }
+}

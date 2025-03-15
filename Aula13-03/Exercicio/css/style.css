@@ -1,0 +1,171 @@
+/* Style CSS */
+
+/* Estilizando o Cabeçalho */
+.header {
+    width: 75%;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: 12%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--bg-header);
+
+    /* Logo */
+    & .logo {
+        font-family: "Russo One", sans-serif;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        font-size: 22pt;
+        font-weight: 500;
+    }
+
+    /* Menu */
+    & .menu {
+        width: 80%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+
+        /* Lista */
+        & ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            /* Links/Abas */
+            & li a {
+                font-family: "Orbitron", sans-serif;
+                width: 50px;
+                height: auto;
+                background-color: transparent;
+                padding: 13px 25px;
+                color: var(--a-00);
+                font-weight: 500;
+                font-size: 13.08px;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: all .25s ease-out;
+
+                /* Adicionando um efeito ao passar o mouse por cima do elemento */
+                &:hover {
+                    color: var(--a-01);
+                    background-color: var(--bg-color);
+                    transition: all .25s ease-in;
+                }
+            }
+
+            /* Botão de mudar o tema */
+            & li .btn-darkmode {
+                font-family: "Orbitron", sans-serif;
+                cursor: pointer;
+                width: auto;
+                height: auto;
+                background-color: var(--btn-bg-00);
+                color: var(--btn-color);
+                padding: 6px 25px;
+                border-radius: 3px;
+                font-size: 13px;
+                font-weight: 900;
+                transition: all .25s ease-out;
+                text-transform: uppercase;
+                border: 1px solid transparent;
+
+                /* Adicionando um efeito ao passar o mouse por cima do elemento */
+                &:hover {
+                    transform: scale(1.04);
+                    background-color: var(--btn-bg-01);
+                    transition: all .25s ease-in;
+                    border: 1px solid var(--btn-bg-00);
+                }
+            }
+        }
+    }
+}
+
+/* Seção dos cards */
+& .s-cards {
+    width: 100%;
+    height: 100%;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 10px;
+    gap: 1.5rem;
+
+    /* Card */
+    & .card {
+        width: 300px;
+        height: auto;
+        padding: 15px;
+        background-color: var(--card-bg);
+        box-shadow: 0 0 10px var(--bx-shadow-card);
+        transition: all .35s ease-out;
+        cursor: default;
+        
+        /* Estilizando os links das notícias */
+        & a{
+            text-decoration: underline;
+            color: var(--btn-bg-00);
+        }
+
+        /* Imagem */
+        & .new {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--bx-shadow-card);
+        }
+
+        /* Título do post */
+        & .t-post {
+            color: var(--text-color);
+            font-family: "Russo One", sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            padding-bottom: 5px;
+        }
+
+        /* Notícia */
+        & .post {
+            color: var(--p-color);
+            font-size: 16px;
+        }
+
+        /* Adicionando um efeito ao passar o mouse por cima do elemento */
+        &:hover {
+            transform: scale(1.04);
+            transition: all .35s ease-in;
+        }
+    }
+}
+
+/* Rodapé do site */
+.rodape {
+    width: 100%;
+    height: 35px;
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Texto de autor */
+    & p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: var(--text-color);
+
+        /* Link */
+        & a {
+            font-weight: 600;
+        }
+    }
+}
