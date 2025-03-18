@@ -16,8 +16,17 @@
 <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
-        <img src="./img/receita-lg.png" alt="Logo do Receitas para o Churras" class="logo">
-        <h1 class="l-text">Receitas para <span style="font-size: .8rem;">o</span> <span style="color: #ff3c00;">Churras</span></h1>
+        <div class="logo-receita">
+            <img src="./img/receita-lg.png" alt="Logo do Receitas para o Churras" class="logo">
+            <h1 class="l-text">Receitas para <span style="font-size: .8rem;">o</span> <span style="color: #f2f2f2; text-shadow: 0 0 7px #000000cc;">Churras</span></h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recipe</a></li>
+                <li><button onclick="toggleDarkMode()" class="btn-darkmode">Dark Mode</button></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Parte principal do site -->
@@ -75,5 +84,7 @@
             </p>
         </section>
     </main>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>

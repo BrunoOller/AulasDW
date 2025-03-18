@@ -2,20 +2,67 @@
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--header-bg);
+    border-bottom: .5px solid #0000009b;
 
-    & .logo {
-        width: 150px;
+    & .logo-receita {
+        width: 30%;
         height: auto;
-        filter: invert(1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+
+        & .logo {
+            width: 90px;
+            height: auto;
+            filter: drop-shadow(0 0 10px #000000cc);
+        }
+    
+        & .l-text {
+            width: 150px;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
     }
 
-    & .l-text {
-        width: 300px;
-        font-size: 1.3rem;
-        color: #f2f2f2;
+    & .menu {
+        width: 70%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & ul {
+            width: 80%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            
+            & a {
+                color: var(--text-header);
+                text-decoration: none;
+                font-size: 1.1rem;
+                padding: 8px 25px;
+
+                &:hover {
+                    background-color: #b33a0ecc;
+                }
+            }
+
+            & .btn-darkmode {
+                background-color: var(--btn-bg);
+                color: var(--btn-color);
+                padding: 8px 25px;
+                border-radius: 4px;
+                font-size: 1.1rem;
+                box-shadow: 0 0 10px #000000cc;
+            }
+        }
     }
 }
 
@@ -25,6 +72,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #e5e5e5;
     
     & .left {
         width: 850px;
