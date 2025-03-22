@@ -7,25 +7,10 @@
     background-color: var(--header-bg);
     border-bottom: .5px solid #0000009b;
 
-    & .logo-receita {
-        width: 30%;
+    & .logo {
+        width: 100px;
         height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: default;
-
-        & .logo {
-            width: 90px;
-            height: auto;
-            filter: drop-shadow(0 0 10px #000000cc);
-        }
-    
-        & .l-text {
-            width: 150px;
-            font-size: 1rem;
-            color: var(--text-color);
-        }
+        filter: invert(1);
     }
 
     & .menu {
@@ -34,20 +19,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         & ul {
-            width: 80%;
+            width: 100%;
             display: flex;
             justify-content: end;
             align-items: center;
-            gap: 2rem;
             list-style: none;
-            
+            gap: 1rem;
+
             & a {
+                text-transform: uppercase;
                 color: var(--text-header);
                 text-decoration: none;
-                font-size: 1.1rem;
-                padding: 8px 25px;
+                font-size: 1rem;
+                padding: 8px 35px;
+
 
                 &:hover {
                     background-color: #b33a0ecc;
@@ -55,12 +42,15 @@
             }
 
             & .btn-darkmode {
+                text-transform: uppercase;
                 background-color: var(--btn-bg);
                 color: var(--btn-color);
                 padding: 8px 25px;
                 border-radius: 4px;
-                font-size: 1.1rem;
+                font-size: 1rem;
+                font-weight: 600;
                 box-shadow: 0 0 10px #000000cc;
+                margin-left: 10px;
             }
         }
     }
@@ -72,8 +62,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e5e5e5;
-    
+    background-color: var(--bg-color-02);
+
     & .left {
         width: 850px;
         height: auto;
@@ -119,56 +109,98 @@
     }
 }
 
-.receita {
+.s-receita {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin-top: 50px;
+    background-color: var(--bg-color-01);
 
-    & .introducao {
-        width: 1000px;
+    & .receita {
+        width: 50%;
         height: auto;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: .5rem;
-
-        & .i-title {
-            font-size: 18pt;
-            color: var(--title-color);
-        }
-
-        & .p-caseiro {
-            width: 700px;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 0 10px #000000b4;
-        }
-    }
-
-    & .ingredientes {
-        width: 1000px;
-        height: auto;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: .5rem;
-        margin-top: 40px;
+        background-color: var(--bg-color-02);
+        padding: 20px;
+        box-shadow: 0 0 10px #000000b4;
+        border-radius: 7px;
 
-        & h2 {
-            font-size: 18pt;
-            color: var(--title-color);
+        & .introducao {
+            width: 1000px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 20px;
+
+            & .i-title {
+                font-size: 18pt;
+                color: var(--title-color);
+            }
+
+            & .p-caseiro {
+                width: 700px;
+                height: auto;
+                border-radius: 5px;
+                box-shadow: 0 0 10px #000000b4;
+            }
         }
 
-        & ul li {
-            width: 600px;
+        & .ingredientes {
+            width: 1000px;
             height: auto;
-            font-size: 13pt;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 40px;
+
+            & h2 {
+                font-size: 18pt;
+                color: var(--title-color);
+            }
+
+            & ul li {
+                width: 600px;
+                height: auto;
+                font-size: 13pt;
+                color: var(--p-color);
+            }
+        }
+
+        & .modo-prep {
+            width: 1000px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            margin-top: 40px;
+
+            & h2 {
+                font-size: 18pt;
+                color: var(--title-color);
+            }
+
+            & ol li {
+                width: 600px;
+                height: auto;
+                font-size: 13pt;
+                color: var(--p-color);
+
+                & strong {
+                    color: #ff3c00;
+                }
+            }
         }
     }
 }
@@ -180,4 +212,5 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: var(--p-color);
 }

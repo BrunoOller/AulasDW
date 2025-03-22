@@ -1,0 +1,20 @@
+/* Color CSS */
+/* Criando as variáveis de cor */
+:root {
+    --cor-bg: #efefef;
+    --bg-calc: #ffffff;
+    --text-color: #1a1a1a;
+    --btn-bg: #ffffff;
+    --btn-bg-dm: #1a1a1a;
+    --btn-color: #f1f1f1;
+
+    /* Trocando as cores das variáveis para o tema escuro */
+    body.dark-mode {
+        --cor-bg: #1a1a1a;
+        --bg-calc: #222222;
+        --text-color: #f1f1f1;
+        --btn-bg: #222222;
+        --btn-bg-dm: #f1f1f1;
+        --btn-color: #1a1a1a;
+    }
+}

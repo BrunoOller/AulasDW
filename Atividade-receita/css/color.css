@@ -2,12 +2,21 @@
 
 /* Criando as variáveis de cor para o site */
 :root {
-    --header-bg: #d55020;
-    --bg-color: #f2f2f2;
+    --header-bg: #ff3c00;
+    --bg-color-01: #e5e5e5;
+    --bg-color-02: #f2f2f2;
     --title-color: #000;
     --text-color: #1b1b1b;
     --text-header: #e1e1e1;
-    --btn-bg: #1a1a1a;
-    --btn-color: #f2f2f2;
-    --p-color: #252525; 
+    --btn-color: #1a1a1a;
+    --btn-bg: #f2f2f2;
+    --p-color: #252525;
+
+    body.dark-mode {
+        --bg-color-01: #222222;
+        --bg-color-02: #1a1a1a;
+        --title-color: #fff;
+        --text-color: #f2f2f2;
+        --p-color: #f4f4f4;
+    }
 }

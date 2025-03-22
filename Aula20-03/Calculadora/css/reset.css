@@ -1,6 +1,8 @@
 /* Reset CSS */
+/* Importando a fonte Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Resetando todos os elementos */
 *,
 *::before,
 *::after {
@@ -10,9 +12,13 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+/* Definindo um tamanho de texto fixo */
+html {
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
-    background: var(--bg-color-01);
+}
+
+/* Colocando a cor do fundo, e definindo a fonte Poppins para todos os textos */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-bg);
 }

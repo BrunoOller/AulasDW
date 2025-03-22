@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Título -->
+    <title>Calculadora</title>
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/color.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Calculadora -->
+    <div class="content">
+        <form class="calculator">
+
+            <!-- Tela que exibirá os valores -->
+            <input type="text" class="value" readonly id="display">
+
+            <!-- Botões de números e operadores -->
+            <div class="btns">
+                <button class="num clear" data-value="C">C</button>
+                <button class="num" data-value="/">/</button>
+                <button class="num" data-value="*">*</button>
+                <button class="num" data-value="7">7</button>
+                <button class="num" data-value="8">8</button>
+                <button class="num" data-value="9">9</button>
+                <button class="num" data-value="-">-</button>
+                <button class="num" data-value="4">4</button>
+                <button class="num" data-value="5">5</button>
+                <button class="num" data-value="6">6</button>
+                <button class="num plus" data-value="+">+</button>
+                <button class="num" data-value="1">1</button>
+                <button class="num" data-value="2">2</button>
+                <button class="num" data-value="3">3</button>
+                <button class="num" data-value="0">0</button>
+                <button class="num" data-value="00">00</button>
+                <button class="num" data-value=".">.</button>
+                <button class="num equal" data-value="=">=</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Botão para mudar o tema -->
+    <button class="btn-darkmode" onclick="toggleDarkMode()">Dark Mode</button>
+
+    <!-- Link JS -->
+    <script src="./js/script.js"></script>
+
+    <!-- Criação da função de mudar o tema -->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+
+</html>
