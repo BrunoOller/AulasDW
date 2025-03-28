@@ -1,0 +1,23 @@
+/* Reset CSS */
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Resetando todos os elementos */
+*,
+*::before,
+*::after {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo um tamanho de texto fixo */
+html {
+    font-size: 16px;
+}
+
+/* Colocando a cor do fundo, e definindo a fonte Poppins para todos os textos */
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #222;
+}

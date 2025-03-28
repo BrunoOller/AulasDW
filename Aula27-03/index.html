@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Revisão</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="area">
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="calculo" id="calculo"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="resultado" id="resultado"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="button" id="limpar" class="limpar">C</button></td>
+                        <td><button type="button" id="divisao" class="btn operacao">/</button></td>
+                        <td><button type="button" id="multiplicacao" class="btn operacao">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="n7" class="btn numeros">7</button></td>
+                        <td><button type="button" id="n8" class="btn numeros">8</button></td>
+                        <td><button type="button" id="n9" class="btn numeros">9</button></td>
+                        <td><button type="button" id="subtracao" class="btn operacao">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="n4" class="btn numeros">4</button></td>
+                        <td><button type="button" id="n5" class="btn numeros">5</button></td>
+                        <td><button type="button" id="n6" class="btn numeros">6</button></td>
+                        <td rowspan="2"><button type="button" id="soma" class="soma operacao">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="n1" class="btn numeros">1</button></td>
+                        <td><button type="button" id="n2" class="btn numeros">2</button></td>
+                        <td><button type="button" id="n3" class="btn numeros">3</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" id="n0" class="btn numeros">0</button></td>
+                        <td><button type="button" id="virgula" class="btn">.</button></td>
+                        <td colspan="2"><button type="button" id="igual" class="igual">=</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

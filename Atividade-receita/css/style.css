@@ -63,9 +63,9 @@
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color-02);
+    gap: 4rem;
 
     & .left {
-        width: 850px;
         height: auto;
         display: flex;
         flex-direction: column;
