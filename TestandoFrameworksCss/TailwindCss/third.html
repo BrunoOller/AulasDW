@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplos Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="bg-gray-100 p-6 font-sans">
+
+        <!-- TÍTULO -->
+        <h1 class="text-3xl font-bold text-center mb-6">Exemplos de texto e cards com Tailwind</h1>
+
+        <!-- SEÇÃO DE TEXTOS -->
+        <div class="bg-white rounded-lg p-6 shadow mb-10 shadow-2xl">
+            <h2 class="text-xl font-semibold mb-4">📏 Tamanhos de texto:</h2>
+            <p class="text-xs">text-xs (extra pequeno)</p>
+            <p class="text-sm">text-sm (pequeno)</p>
+            <p class="text-base">text-base (padrão)</p>
+            <p class="text-lg">text-lg (grande)</p>
+            <p class="text-xl">text-xl (maior)</p>
+            <p class="text-2xl">text-2xl</p>
+            <p class="text-3xl">text-3xl</p>
+            <p class="text-4xl">text-4xl</p>
+            <p class="text-5xl">text-5xl</p>
+            <p class="text-6xl">text-6xl</p>
+            <p class="text-7xl">text-7xl</p>
+        </div>
+
+        <!-- SEÇÃO DE CARDS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- CARD 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden shadow-2xl">
+                <img src="https://www.flowgames.gg/wp-content/uploads/2022/10/MW2.png" alt="Imagem aleatória"
+                    class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Meu Primeiro Card</h3>
+                    <p class="text-sm text-gray-600 mb-4">Este é um exemplo de card usando Tailwind. Fácil e bonito!</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Ver mais</button>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden shadow-2xl">
+                <img src="https://www.flowgames.gg/wp-content/uploads/2022/10/MW2.png" alt="Imagem aleatória"
+                    class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Card com tecnologia</h3>
+                    <p class="text-sm text-gray-600 mb-4">Você pode trocar a imagem e texto como quiser.</p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Ver mais</button>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden shadow-2xl">
+                <img src="https://www.flowgames.gg/wp-content/uploads/2022/10/MW2.png" alt="Imagem aleatória"
+                    class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Card de design</h3>
+                    <p class="text-sm text-gray-600 mb-4">Cards responsivos com hover e botões estilosos.</p>
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">Ver mais</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-white mt-4 p-4 rounded-lg shadow-2xl">
+            <div class="bg-blue-500 text-white p-4 rounded-sm mb-4">
+                Bordas pequenas (rounded-sm)
+            </div>
+            <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+                Bordas médias (rounded-md)
+            </div>
+            <div class="bg-yellow-500 text-white p-4 rounded-xl mb-4">
+                Bordas grandes (rounded-xl)
+            </div>
+            <div class="bg-red-500 text-white p-4 rounded-full">
+                Bordas totalmente arredondadas (rounded-full)
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

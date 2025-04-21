@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid com col-span</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <main class="p-6">
+        <h1 class="text-2xl font-bold mb-6 text-center">Exemplo de Grid com Tailwind</h1>
+        <div class="grid grid-cols-4 gap-4">
+            <!-- Cabeçalho ocupa as 4 colunas -->
+            <div class="bg-blue-500 text-white p-4 rounded col-span-4 text-center">
+                Cabeçalho (col-span-4)
+            </div>
+            <!-- Menu ocupa 1 coluna -->
+            <div class="bg-green-500 text-white p-4 rounded col-span-1">
+                Menu (col-span-1)
+            </div>
+            <!-- Conteúdo ocupa 3 colunas -->
+            <div class="bg-yellow-500 text-black p-4 rounded col-span-3">
+                Conteúdo principal (col-span-3)
+            </div>
+            <!-- Rodapé ocupa todas as colunas -->
+            <div class="bg-purple-500 text-white p-4 rounded col-span-4 text-center">
+                Rodapé (col-span-4)
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
