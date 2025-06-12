@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1F1F1F;
+        }
+
+        .container {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            & .bloco1, .bloco2, .bloco3, .bloco4, .bloco5 {
+                width: 100px;
+                height: 100px;
+                border: 1px solid rgb(71, 71, 71);
+                box-shadow: 0 5px 10px #00000048;
+                border-radius: 50%;
+            }
+            
+            & .bloco1, .bloco4 {
+                background-color: #c300ff;
+                animation: 2s cimaBaixo ease-in-out infinite;
+            }
+            
+            & .bloco2 {
+                background-color: #ffd900;
+                position: absolute;
+                animation: 2s cimaBaixo3 ease-in-out infinite;
+            }
+            
+            & .bloco3, .bloco5 {
+                background-color: #ff7300;
+                animation: 2s cimaBaixo2 ease-in-out infinite;
+            }
+        }
+
+        @keyframes cimaBaixo {
+            0% {
+                transform: translateY(-35%);
+            }
+            50% {
+                transform: translateY(35%) scale(.65) rotateX(145deg);
+                box-shadow: 0 0 20px #0051ff;
+                background-color: #0051ff;
+            }
+            100% {
+                transform: translateY(-35%);
+            }
+        }
+
+        @keyframes cimaBaixo2 {
+            0% {
+                transform: translateY(55%);
+            }
+            50% {
+                transform: translateY(-55%) scale(0.89) rotateY(195deg);
+                box-shadow: 0 0 20px #ffd900;
+                background-color: #ffd900;
+            }
+            100% {
+                transform: translateY(55%);
+            }
+        }
+
+        @keyframes cimaBaixo3 {
+            0% {
+                transform: translateY(-125%);
+            }
+            50% {
+                transform: translateY(125%) scale(1.15) rotateX(245deg);
+                box-shadow: 0 0 20px #e70000;
+                background-color: #e70000;
+            }
+            100% {
+                transform: translateY(-125%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bloco1"></div>
+        <div class="bloco2"></div>
+        <div class="bloco3"></div>
+        <div class="bloco4"></div>
+        <div class="bloco5"></div>
+    </div>
+</body>
+</html>
