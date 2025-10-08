@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/exStyle.css">
+
+    <style>
+        .maincontent {
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: .8rem .7rem;
+            font-size: 13pt;
+            cursor: pointer;
+            background-color: #111111;
+            box-shadow: 0 0 10px #0000002d;
+            color: #fff;
+            margin-top: .75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: #313131;
+            }
+        }
+
+        .results {
+            width: 80%;
+            height: auto;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincontent">
+        <form id="formNotas">
+            <h3>Aluno 1</h3>
+            <label for="nota1-1">Nota 1:</label>
+            <input type="number" name="aluno1[]" id="nota1-1" step="any" required><br>
+            <label for="nota2-1">Nota 2:</label>
+            <input type="number" name="aluno1[]" id="nota2-1" step="any" required><br><br>
+
+            <h3>Aluno 2</h3>
+            <label for="nota1-2">Nota 1:</label>
+            <input type="number" name="aluno2[]" id="nota1-2" step="any" required><br>
+            <label for="nota2-2">Nota 2:</label>
+            <input type="number" name="aluno2[]" id="nota2-2" step="any" required><br><br>
+
+            <h3>Aluno 3</h3>
+            <label for="nota1-3">Nota 1:</label>
+            <input type="number" name="aluno3[]" id="nota1-3" step="any" required><br>
+            <label for="nota2-3">Nota 2:</label>
+            <input type="number" name="aluno3[]" id="nota2-3" step="any" required><br><br>
+
+            <button type="button" onclick="calcularMedias()">Calcular Médias</button>
+        </form>
+
+        <div class="results">
+            <h3>Resultados:</h3>
+            <div id="resultado"></div>
+        </div>
+    </div>
+    <a href="../../index.html">Voltar</a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

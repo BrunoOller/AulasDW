@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/exStyle.css">
+    
+    <style>
+        .maincontent {
+            width: 80%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dados {
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            padding: .8rem .7rem;
+            font-size: 13pt;
+            cursor: pointer;
+            background-color: #111111;
+            box-shadow: 0 0 10px #0000002d;
+            color: #fff;
+            margin-top: .75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: #313131;
+            }
+        }
+
+        .results {
+            width: 80%;
+            height: auto;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincontent">
+        <div class="dados">
+            <label for="num">Digite números (digite 0 para encerrar):</label>
+            <input type="number" id="num" step="1">
+            <button type="button" onclick="adicionarNumero()">Adicionar</button>
+        </div>
+        <div class="results">
+            <h3>Resultados:</h3>
+            <div id="resultado"></div>
+            <a href="../../index.html">Voltar</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
