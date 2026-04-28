@@ -23,9 +23,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Plantas" asp-action="Index">Plantas</a>
-                        </li>
+                        <partial name="_loginAdmin.cshtml" />
+                        <partial name="_partialUsuario.cshtml" />
+                        @*Verificando se o usuario esta logado*@
+                        @if(User?.Identity?.IsAuthenticated ?? false) 
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="Logout">Sair</a>
+                            </li>
+                        }
+                        else 
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Accounts" asp-action="Login">Entrar</a>
+                            </li>
+                        }
+                        
                     </ul>
                 </div>
             </div>
@@ -39,7 +52,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2026 - Vasos Inteligentes
+            &copy; 2026 - Vasos Inteligentes 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

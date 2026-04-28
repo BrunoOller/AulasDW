@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,11 +20,11 @@ namespace VasosInteligentes.Controllers
         {
             _context = context;
         }
-
+        [Authorize(Roles = "Administrador")]
         // GET: Plantas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Planta.Find(_ => true).ToListAsync());
+            return View(await _context.Planta.Find(_=>true).ToListAsync());
         }
 
         // GET: Plantas/Details/5
@@ -54,7 +55,7 @@ namespace VasosInteligentes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,UnidadeIdealMin,UnidadeIdealMax,LuminosidadeIdeal")] Planta planta)
+        public async Task<IActionResult> Create([Bind("Nome,UmidadeIdealMin,UmidadeIdealMax,LuminosidadeIdeal")] Planta planta)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +86,7 @@ namespace VasosInteligentes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Nome,UnidadeIdealMin,UnidadeIdealMax,LuminosidadeIdeal")] Planta planta)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Nome,UmidadeIdealMin,UmidadeIdealMax,LuminosidadeIdeal")] Planta planta)
         {
             if (id != planta.Id)
             {
@@ -136,7 +137,7 @@ namespace VasosInteligentes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var result = await _context.Planta.DeleteOneAsync(m => m.Id == id);
+            var result = await _context.Planta.DeleteOneAsync(m=>m.Id == id);   
             if (result == null)
             {
                 return NotFound();
