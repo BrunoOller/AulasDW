@@ -1,11 +1,38 @@
-﻿@using Microsoft.AspNetCore.Authorization;
+﻿@*
+    Views/Shared/_partialUsuario.cshtml
+    ─────────────────────────────────────────────────────────────────────────────
+    Partial view que exibe os itens de navegação EXCLUSIVOS do usuário comum
+    (role "Usuario"). O administrador (role "Administrador") NÃO vê estes itens.
 
+    Itens de navbar presentes:
+      • "Vasos"     → leva para a listagem dos vasos do usuário (MeusVasos)
+      • "Dashboard" → NOVO: leva para o dashboard de luminosidade por período
+    ─────────────────────────────────────────────────────────────────────────────
+*@
+@using Microsoft.AspNetCore.Authorization;
+
+@* Verifica se o usuário está autenticado antes de qualquer coisa *@
 @if (User.Identity.IsAuthenticated)
 {
+    @* Verifica se o usuário possui a role "Usuario" (não entra para Administrador) *@
     @if (User.IsInRole("Usuario"))
     {
+        @* Item já existente: link para a listagem de vasos do usuário *@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-controller="Vasos" asp-action="MeusVasos">Vasos</a>
+        </li>
+
+        @*
+            NOVO ITEM: Dashboard
+            ────────────────────────────────────────────────────────────────────
+            Adiciona o link "Dashboard" na navbar apenas para o usuário comum.
+            Aponta para a action Dashboard do VasosController.
+            O administrador não verá este item porque o bloco inteiro está
+            dentro da condição User.IsInRole("Usuario").
+            ────────────────────────────────────────────────────────────────────
+        *@
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Vasos" asp-action="Dashboard">Dashboard</a>
         </li>
     }
 }

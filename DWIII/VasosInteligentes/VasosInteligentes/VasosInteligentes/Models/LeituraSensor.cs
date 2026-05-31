@@ -17,3 +17,4 @@ namespace VasosInteligentes.Models
         public DateTime DataLeitura { get; set; } = DateTime.UtcNow;
     }
 }
+

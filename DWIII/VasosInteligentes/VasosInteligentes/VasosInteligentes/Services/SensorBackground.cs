@@ -34,6 +34,11 @@ namespace VasosInteligentes.Services
                             Luminosidade = Math.Round(_random.NextDouble() * (100 - 10) + 10, 1),
                             DataLeitura = DateTime.UtcNow
 
+                            // Tarde: 14h horário de Brasília = 17h UTC
+                            //DataLeitura = DateTime.UtcNow.Date.AddHours(17)
+
+                            // Noite: 20h horário de Brasília = 23h UTC
+                            //DataLeitura = DateTime.UtcNow.Date.AddHours(23)
                         };
                         await _context.LeituraSensor.InsertOneAsync(novaLeitura, null, stoppingToken);
                     }

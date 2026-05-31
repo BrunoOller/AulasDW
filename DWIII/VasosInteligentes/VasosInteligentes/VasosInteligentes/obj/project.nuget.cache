@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ftzalWqov44=",
+  "dgSpecHash": "zvzKYndsr/4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruno\\Desktop\\DesenvolvimentoWebIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\Desktop\\AulasDW\\DWIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\aspnetcore.identity.mongodbcore\\7.0.0\\aspnetcore.identity.mongodbcore.7.0.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",

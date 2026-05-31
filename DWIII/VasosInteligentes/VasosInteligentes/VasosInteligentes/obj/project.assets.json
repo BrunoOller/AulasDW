@@ -7593,11 +7593,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruno\\Desktop\\DesenvolvimentoWebIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\Desktop\\AulasDW\\DWIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
       "projectName": "VasosInteligentes",
-      "projectPath": "C:\\Users\\bruno\\Desktop\\DesenvolvimentoWebIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
+      "projectPath": "C:\\Users\\bruno\\Desktop\\AulasDW\\DWIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruno\\Desktop\\DesenvolvimentoWebIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\Desktop\\AulasDW\\DWIII\\VasosInteligentes\\VasosInteligentes\\VasosInteligentes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

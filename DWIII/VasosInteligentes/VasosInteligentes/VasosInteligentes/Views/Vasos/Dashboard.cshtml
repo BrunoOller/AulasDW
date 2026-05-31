@@ -1,0 +1,171 @@
+﻿@*
+    Views/Vasos/Dashboard.cshtml
+    ─────────────────────────────────────────────────────────────────────────────
+    View exclusiva do usuário comum (role "Usuario").
+    Exibe um gráfico de barras empilhadas (stacked) com a biblioteca ApexCharts,
+    onde cada barra representa UM vaso do usuário logado.
+
+    A barra de cada vaso é dividida em três segmentos coloridos:
+      • Manhã  (6h–11:59h)  → cor azul-clara
+      • Tarde  (12h–17:59h) → cor amarela/laranja
+      • Noite  (18h–00h)    → cor azul-escura
+
+    Os dados (nomes dos vasos e médias de luminosidade) são recebidos do
+    controller via ViewBag e injetados no JavaScript abaixo.
+    ─────────────────────────────────────────────────────────────────────────────
+*@
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2 class="mb-4">Dashboard — Luminosidade por Período</h2>
+
+@*
+    Descrição exibida ao usuário explicando o que o gráfico representa.
+*@
+<p class="text-muted mb-4">
+    O gráfico abaixo mostra a <strong>média de luminosidade</strong> registrada pelos sensores
+    de cada um dos seus vasos, separada por período do dia:
+    <span class="badge" style="background-color:#4FC3F7">Manhã (6h–11:59h)</span>
+    <span class="badge" style="background-color:#FFB74D">Tarde (12h–17:59h)</span>
+    <span class="badge" style="background-color:#1565C0">Noite (18h–00h)</span>
+</p>
+
+@*
+    Container onde o ApexCharts vai renderizar o gráfico.
+    O id "grafico-dashboard" é referenciado no JavaScript abaixo.
+*@
+<div id="grafico-dashboard"></div>
+
+@section Scripts {
+    @*
+        Importa a biblioteca ApexCharts via CDN.
+        ApexCharts é uma biblioteca JavaScript de gráficos moderna e responsiva.
+        O tipo "bar" com stacked:true cria o gráfico de barras empilhadas.
+    *@
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script>
+        // ─────────────────────────────────────────────────────────────────────
+        // 1. DADOS VINDOS DO CONTROLLER (via ViewBag → JSON embutido na View)
+        //    O Razor injeta o JSON diretamente no JavaScript,
+        //    evitando a necessidade de uma chamada AJAX separada.
+        // ─────────────────────────────────────────────────────────────────────
+
+        // Array com os nomes dos vasos (serão os rótulos abaixo de cada barra)
+        const nomesVasos = @Html.Raw(ViewBag.NomesVasos);
+
+        // Arrays com as médias de luminosidade por período
+        const mediasManha = @Html.Raw(ViewBag.MediasManha);   // Manhã
+        const mediasTarde = @Html.Raw(ViewBag.MediasTarde);   // Tarde
+        const mediasNoite = @Html.Raw(ViewBag.MediasNoite);   // Noite
+
+        // ─────────────────────────────────────────────────────────────────────
+        // 2. CONFIGURAÇÃO DO GRÁFICO APEXCHARTS
+        // ─────────────────────────────────────────────────────────────────────
+        const options = {
+
+            // "series" define cada fatia (segmento) da barra empilhada.
+            // Cada série tem um nome (legenda) e seus dados (um por vaso).
+            series: [
+                {
+                    name: "Manhã",       // legenda exibida no topo
+                    data: mediasManha    // array de médias – um valor por barra/vaso
+                },
+                {
+                    name: "Tarde",
+                    data: mediasTarde
+                },
+                {
+                    name: "Noite",
+                    data: mediasNoite
+                }
+            ],
+
+            // Tipo "bar" com stacked:true → barras verticais empilhadas
+            chart: {
+                type: "bar",
+                height: 420,
+                stacked: true,          // ← empilha os segmentos Manhã+Tarde+Noite
+                toolbar: {
+                    show: true          // exibe botão de download/zoom
+                }
+            },
+
+            // Cores de cada série, na mesma ordem de "series" acima
+            colors: ["#4FC3F7", "#FFB74D", "#1565C0"],
+
+            // Eixo X: cada posição corresponde a um vaso
+            // "categories" define os rótulos que aparecerão abaixo de cada barra
+            xaxis: {
+                categories: nomesVasos,  // nomes dos vasos vindos do ViewBag
+                title: {
+                    text: "Vasos"
+                }
+            },
+
+            // Eixo Y: valores numéricos de luminosidade
+            yaxis: {
+                title: {
+                    text: "Média de Luminosidade"
+                }
+            },
+
+            // Legenda posicionada no topo, centralizada
+            legend: {
+                position: "top",
+                horizontalAlign: "center"
+            },
+
+            // Tooltip que aparece ao passar o mouse sobre cada segmento
+            tooltip: {
+                y: {
+                    // Formata o valor exibido no tooltip com a unidade "lux"
+                    formatter: function (val) {
+                        return val + " lux";
+                    }
+                }
+            },
+
+            // Labels de dados dentro das barras (opcional, melhora a leitura)
+            dataLabels: {
+                enabled: true,
+                formatter: function (val) {
+                    // Exibe o valor apenas se for maior que 0 (evita poluição visual)
+                    return val > 0 ? val : "";
+                },
+                style: {
+                    fontSize: "11px",
+                    colors: ["#fff"]    // texto branco para contraste com as cores das séries
+                }
+            },
+
+            // Título interno do gráfico
+            title: {
+                text: "Luminosidade média por período — todos os vasos",
+                align: "center",
+                style: {
+                    fontSize: "14px",
+                    fontWeight: "600"
+                }
+            },
+
+            // Torna as barras responsivas (adapta a largura ao container)
+            plotOptions: {
+                bar: {
+                    horizontal: false,      // barras verticais
+                    columnWidth: "55%"      // largura de cada barra
+                }
+            }
+        };
+
+        // ─────────────────────────────────────────────────────────────────────
+        // 3. RENDERIZAÇÃO DO GRÁFICO
+        //    Cria a instância do ApexCharts apontando para o elemento HTML
+        //    com id="grafico-dashboard" e chama render() para exibir.
+        // ─────────────────────────────────────────────────────────────────────
+        const chart = new ApexCharts(document.querySelector("#grafico-dashboard"), options);
+        chart.render();
+    </script>
+}
